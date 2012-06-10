@@ -17,7 +17,8 @@ public final class R {
         public static final int main=0x7f030000;
     }
     public static final class string {
-        public static final int api_json_all_cities=0x7f040003;
+        public static final int api_json_all_cities=0x7f040004;
+        public static final int api_json_all_string=0x7f040003;
         public static final int api_root=0x7f040002;
         public static final int app_name=0x7f040000;
         public static final int template_user_agent=0x7f040001;

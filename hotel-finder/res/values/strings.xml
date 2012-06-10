@@ -3,5 +3,6 @@
     <string name="app_name">Hotel Finder</string>
     <string name="template_user_agent" translatable="false">"%1$s/%2$s (Linux; Android)"</string>
     <string name="api_root">http://api.viesbuciai.lt/json/</string>
-    <string name="api_json_all_cities">"?agent=iPhone|4.3.1&amp;method=strings"</string>
+    <string name="api_json_all_string">&quot;?agent=iPhone%7C4.3.1&amp;method=strings&quot;</string>
+    <string name="api_json_all_cities">&quot;?agent=iPhone%7C4.3.1&amp;method=allcountries</string>
 </resources>

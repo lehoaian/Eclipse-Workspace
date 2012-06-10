@@ -3,6 +3,7 @@ package com.hotel.api;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
@@ -20,15 +21,16 @@ public class AllCountriesApi {
         this._context = context;
     }
 
-    public JSONObject getResponse() throws URISyntaxException{
+    public JSONObject getResponse() throws URISyntaxException, JSONException{
         _api = getUrlApi(_context.getString(R.string.api_json_all_cities));
 		Log.i(TAG, _api.toString());
 		
         try {
             ApiHelper.prepareUserAgent(_context);
             Log.i(TAG, _api.toString());
-            String response = ApiHelper.getUrlContent(_api.toURI());
+            String response = ApiHelper.getUrlContent(_api.toString());
             Log.i(TAG, response);
+            return new JSONObject(response);
         } catch (ApiHelper.ApiException e) {
             Log.e(TAG, e.getMessage());
         }
@@ -36,6 +38,11 @@ public class AllCountriesApi {
         return new JSONObject();
     }
 
+    private int saveToDB(){
+		return 0;
+    	
+    }
+    
     public String[][] getListOfCities(int refreshFlg){
         return new String[][]{};
     }

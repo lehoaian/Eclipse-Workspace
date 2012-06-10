@@ -103,7 +103,7 @@ public class ApiHelper {
      * @return The raw content returned by the server.
      * @throws ApiException If any connection or server error occurs.
      */
-    protected static synchronized String getUrlContent(URI url) throws ApiException {
+    protected static synchronized String getUrlContent(String url) throws ApiException {
         if (sUserAgent == null) {
             throw new ApiException("User-Agent string must be prepared");
         }
@@ -138,6 +138,7 @@ public class ApiHelper {
             // Return result from buffered stream
             return new String(content.toByteArray());
         } catch (IOException e) {
+        	Log.e(TAG,e.getMessage());
             throw new ApiException("Problem communicating with API", e);
         }
     }
